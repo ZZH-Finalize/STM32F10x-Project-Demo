@@ -34,5 +34,5 @@ IO_IMP(_sbrk);
 IO_IMP(_kill);
 
 IO_IMP(_isatty);
-// IO_IMP(_fstat);
+IO_IMP(_fstat);
 IO_IMP(_lseek);

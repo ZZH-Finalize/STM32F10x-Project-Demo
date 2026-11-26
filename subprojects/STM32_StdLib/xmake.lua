@@ -16,7 +16,7 @@ add_includedirs(
 target('STM32_StdLib')
     set_kind('static')
     add_defines('USE_STDPERIPH_DRIVER', {public = true})
-    add_options('target_mcu')
+    add_options('target_mcu', {public = true})
 
     -- add source files
     add_files('**.c')

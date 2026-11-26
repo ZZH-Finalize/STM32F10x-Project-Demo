@@ -1,7 +1,7 @@
 local tool_chain_prefix = 'arm-none-eabi'
 
 toolchain(tool_chain_prefix)
-    set_kind('standalone')
+    set_kind('cross')
 
     set_toolset('cc', tool_chain_prefix .. '-gcc')
     set_toolset('cxx', tool_chain_prefix .. '-g++')
@@ -13,3 +13,7 @@ toolchain(tool_chain_prefix)
     set_toolset('size', tool_chain_prefix .. '-size')
     set_toolset('objcopy', tool_chain_prefix .. '-objcopy')
     set_toolset('objdump', tool_chain_prefix .. '-objdump')
+
+    on_check(function (toolchain)
+        return import('lib.detect.find_tool')(tool_chain_prefix .. '-gcc')
+    end)

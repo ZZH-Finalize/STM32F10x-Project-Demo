@@ -1,7 +1,5 @@
 includes('memory_map.lua')
 
-set_toolchains('$(toolchain)')
-
 option('build_demo')
     set_default(false)
     set_description('build demo program')

@@ -8,12 +8,14 @@ set_warnings('everything')
 set_policy('check.auto_ignore_flags', false)
 set_policy('build.always_update_configfiles', true)
 
+add_rules('mode.debug', 'mode.release')
+add_rules('plugin.compile_commands.autoupdate', {outputdir = '$(builddir)'})
+
 includes('cross_files/options.lua')
 includes('cross_files/generate_rules.lua')
 includes('cross_files/toolchain.lua')
 
 -- Global configurations
-add_rules('mode.debug', 'mode.release')
 set_defaultmode('debug')
 set_defaultplat('cross')
 set_defaultarchs('arm')
