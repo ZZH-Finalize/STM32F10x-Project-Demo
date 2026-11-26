@@ -3,6 +3,7 @@
 .global __sinit_func
 .global __einit_func
 .global do_init_calls
+.type do_init_calls, %function
 
 do_init_calls:
     push {lr}
