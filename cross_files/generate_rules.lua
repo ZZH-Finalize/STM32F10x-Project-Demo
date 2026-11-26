@@ -31,7 +31,10 @@ rule('generate.lds')
     end)
 
     after_clean(function (target)
-        os.rm(target:get('generated_lds'))
+        linker_file = target:get('generated_lds')
+        if linker_file then
+            os.rm(linker_file)
+        end
     end)
 
 rule('generate.map')
